@@ -48,13 +48,57 @@ class DequeNodeTest {
     }
     @Nested
     @DisplayName("Test para nodo singular")
-    class SingularNode{
+    class SingularNode {
 
 
         @Test
         @DisplayName("Test previous es null")
-        void testPreviousSingleNode () {
+        void testPreviousSingleNode() {
             assertNull(node.getPrevious());
+        }
+
+        @Test
+        @DisplayName("Test next es null")
+        void testNextSingleNode() {
+            assertNull(node.getNext());
+        }
+
+        @Test
+        @DisplayName("Test isFirst es True")
+        void testIsFirstSingleNode() {
+            assertTrue(node.isFirstNode());
+        }
+
+        @Test
+        @DisplayName("Test isLast es True")
+        void testIsLastSingleNode() {
+            assertTrue(node.isLastNode());
+        }
+
+        @Test
+        @DisplayName("Test isNotTerminal es False")
+        void testIsNotTerminalSingleNode() {
+            assertFalse(node.isNotATerminalNode());
+        }
+    }
+
+    @Nested
+    @DisplayName("Test para nodo con Previous")
+    class NodeWithPrevious{
+        DequeNode<Integer> previous;
+        @BeforeEach
+        void setup(){
+            previous = new DequeNode<>(4, null, null);
+            node.setPrevious(previous);
+        }
+
+        @Test
+        @DisplayName("Test previous es node(4, null, null)")
+        void testPreviousNode () {
+            DequeNode<Integer> expectedNode = previous;
+            DequeNode<Integer> actualNode = node.getPrevious();
+            assertEquals(expectedNode, actualNode);
+
         }
         @Test
         @DisplayName("Test next es null")
@@ -62,9 +106,9 @@ class DequeNodeTest {
             assertNull(node.getNext());
         }
         @Test
-        @DisplayName("Test isFirst es True")
+        @DisplayName("Test isFirst es False")
         void testIsFirstSingleNode () {
-            assertTrue(node.isFirstNode());
+            assertFalse(node.isFirstNode());
         }
         @Test
         @DisplayName("Test isLast es True")
