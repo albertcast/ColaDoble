@@ -7,37 +7,72 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
     private int size;
 
     public DoublyLinkedListDeque() {
-        // TODO
+        first = null;
+        last = null;
+        size = 0;
     }
 
     public void prepend(T value) {
-        // TODO
+    	if(size == 0) {
+    		DequeNode<T> aux = new DequeNode<T>(value, null, null);
+    		first = aux;
+    		last = aux;
+    		size++;
+    	} else {
+    		DequeNode<T> aux = new DequeNode<T>(value, null, first);
+    		first = aux;
+    		size++;
+    	}  	
     }
 
     public void append(T value) {
-        // TODO
+    	if(size == 0) {
+    		DequeNode<T> aux = new DequeNode<T>(value, null, null);
+    		first = aux;
+    		last = aux;
+    		size++;
+    	} else {
+    		DequeNode<T> aux = new DequeNode<T>(value, last, null);
+    		last = aux;
+    		size++;
+    	} 
     }
 
     public void deleteFirst() {
-        // TODO
+    	if(size > 1) {
+	    	first = first.getNext();
+	    	size--;
+    	} else if (size == 1) {
+    		first = null;
+    		last = null;
+    		size--;
+    	} else {
+    		throw new DoubleEndedQueueException("Se han intentado eliminar un elemento de una cola vacía");
+    	}
     }
 
     public void deleteLast() {
-        // TODO
+    	if(size > 1) {
+	    	last = last.getPrevious();
+	    	size--;
+    	} else if (size == 1) {
+    		first = null;
+    		last = null;
+    		size--;
+    	} else {
+    		throw new DoubleEndedQueueException("Se han intentado eliminar un elemento de una cola vacía");
+    	}
     }
 
     public T first() {
-        // TODO
-        return null;
+    	return first.getItem();
     }
 
     public T last() {
-        // TODO
-        return null;
+        return last.getItem();
     }
 
     public int size() {
-        // TODO
-        return 0;
+        return size;
     }
 }
