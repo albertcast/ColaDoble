@@ -173,6 +173,7 @@ class DequeNodeTest {
             previous = new DequeNode<>(4, null, null);
             next = new DequeNode<>(6, null, null);
             node.setPrevious(previous);
+            node.setNext(next);
         }
 
         @Test
