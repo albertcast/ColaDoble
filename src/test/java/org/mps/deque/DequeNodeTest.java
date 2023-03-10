@@ -129,7 +129,7 @@ class DequeNodeTest {
         DequeNode<Integer> next;
         @BeforeEach
         void setup(){
-            next = new DequeNode<>(4, null, null);
+            next = new DequeNode<>(6, null, null);
             node.setNext(next);
         }
 
