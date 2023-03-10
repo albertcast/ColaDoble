@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
+ * @author Nikita Kulyukin Goryunov
  * Usando como item un entero
  *
  * Tests para probar el funcionamiento de la clase DequeNode con las siguientes pruebas:
