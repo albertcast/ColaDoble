@@ -142,7 +142,7 @@ class DequeNodeTest {
         @Test
         @DisplayName("next es node(6, null, null)")
         void testNextNode () {
-            DequeNode<Integer> expectedNode = new DequeNode<>(6, null, null);
+            DequeNode<Integer> expectedNode = next;
             DequeNode<Integer> actualNode = node.getNext();
             assertEquals(expectedNode, actualNode);
         }
@@ -188,7 +188,7 @@ class DequeNodeTest {
         @DisplayName("next es node(6, null, null)")
         void testNextNode () {
 
-            DequeNode<Integer> expectedNode = new DequeNode<>(6, null, null);
+            DequeNode<Integer> expectedNode = next;
             DequeNode<Integer> actualNode = node.getNext();
             assertEquals(expectedNode, actualNode);
         }
