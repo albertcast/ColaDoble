@@ -22,6 +22,7 @@ class DoublyLinkedListDequeTest {
 	 * 		metodo DeleteLast()
 	 * 		metodo append()
 	 * 		metodo prepend()
+	 * 		metodo contains() -> DoublyLinkedListDequeException();
 	 * 
 	 * Trabajando con lista de un solo elemento:
 	 * 		metodo First()
@@ -49,7 +50,16 @@ class DoublyLinkedListDequeTest {
 	 * 		metodo DeleteLast()
 	 * 		metodo append()
 	 * 		metodo prepend()
-	 * 
+	 *
+	 * 	Trabajando con lista (3, 6, 8, 2, 1, 3, 10 , 24):
+	 *
+	 * 		metodo contains(3) -> True (Primer elemento)
+	 * 		metodo contains(2) -> True (Elemento intermedio)
+	 * 		metodo contains(24) -> True (Ultimo elemento)
+	 * 		metodo contains(142) -> False (Elemento no en la cola)
+	 * 		metodo remove(3) -> (6, 8, 2, 1, 3, 10, 24)
+	 * 		metodo remove(8) -> contains(8) = false
+	 * 		metodo remove(24) -> contains(24) = false
 	 */
 	
 	@Nested
@@ -108,6 +118,11 @@ class DoublyLinkedListDequeTest {
 			assertEquals(2, dlld.last());
 			assertEquals(2, dlld.first());
 			assertEquals(1, dlld.size());
+		}
+		@Test
+		@DisplayName("Buscar elemento da negativo")
+		void listaVaciaContieneElemento(){
+			assertFalse(dlld.contains(3));
 		}
 	}
 	
@@ -309,6 +324,41 @@ class DoublyLinkedListDequeTest {
 			assertEquals(3, dlld.last());
 			assertEquals(4, dlld.size());
 		}	
+	}
+
+	@Nested
+	@DisplayName("Lista con elementos (3, 6, 8, 2, 1, 3, 10 , 24)")
+		class pruebaListaConMuchosElementos{
+		DoubleEndedQueue<Integer> dlld;
+		@BeforeEach
+		void setup(){
+			dlld = new DoublyLinkedListDeque<Integer>();
+			dlld.prepend(3);
+			dlld.prepend(6);
+			dlld.prepend(8);
+			dlld.prepend(2);
+			dlld.prepend(1);
+			dlld.prepend(3);
+			dlld.prepend(10);
+			dlld.prepend(24);
+		}
+
+		@AfterEach
+		void fin(){
+			dlld = null;
+		}
+		@Test
+		@DisplayName("primer elemento de la lista")
+		void TestContainsTrue(){
+			assertTrue(dlld.contains(3));
+			assertTrue(dlld.contains(2));
+			assertTrue(dlld.contains(24));
+		}
+		@Test
+		@DisplayName("Elemento no en la lista ")
+		void TestContainsExcepcion(){
+			assertFalse(dlld.contains(142));
+		}
 	}
 
 
