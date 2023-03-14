@@ -348,6 +348,163 @@ class DoublyLinkedListDequeTest {
 	@DisplayName("Pruebas segunda practica")
 	class pruebasSegundaPractica{
 
+		@Nested
+		@DisplayName("Pruebas con lista vacia")
+		class pruebasListasVacias{
+			private DoublyLinkedListDeque<Integer> dlld;
+
+			@BeforeEach
+			void Comienzo() {
+				dlld = new DoublyLinkedListDeque<Integer>();
+			}
+
+			@AfterEach
+			void Fin() {
+				dlld = null;
+			}
+
+			@Test
+			void listaVaciaGet(){
+				
+			}
+
+			@Test
+			void listaVaciaContains(){
+
+			}
+
+			@Test
+			void listaVaciaRemove(){
+
+			}
+
+			@Test
+			void listaVaciaSort(){
+
+			}
+
+
+		}
+		@Nested
+		@DisplayName("Pruebas con lista de un elemento")
+		class pruebasListasUnElemento{
+			private DoublyLinkedListDeque<Integer> dlld;
+
+			@BeforeEach
+			void Comienzo() {
+				dlld = new DoublyLinkedListDeque<Integer>();
+				dlld.append(2);
+			}
+			@AfterEach
+			void Fin() {
+				dlld = null;
+			}
+
+			@Test
+			void listaUnElementoGet(){
+
+			}
+
+			@Test
+			void listaUnElementoContains(){
+
+			}
+
+			@Test
+			void listaUnElementoRemove(){
+
+			}
+
+			@Test
+			void listaUnElementoSort(){
+
+			}
+
+
+		}
+
+		@Nested
+		@DisplayName("Pruebas con lista de dos elementos")
+		class pruebasListasDosElementos{
+			private DoublyLinkedListDeque<Integer> dlld;
+
+			@BeforeEach
+			void Comienzo() {
+				dlld = new DoublyLinkedListDeque<Integer>();
+				dlld.append(2);
+				dlld.append(3);
+			}
+
+			@AfterEach
+			void Fin() {
+				dlld = null;
+			}
+
+			@Test
+			void listaDosElementosGet(){
+
+			}
+
+			@Test
+			void listaDosElementosContains(){
+
+			}
+
+			@Test
+			void listaDosElementosRemove(){
+
+			}
+
+			@Test
+			void listaDosElementosSort(){
+
+			}
+
+
+		}
+
+		@Nested
+		@DisplayName("Pruebas con lista de tres elementos")
+		class pruebasListasTresElementos{
+			private DoublyLinkedListDeque<Integer> dlld;
+
+			@BeforeEach
+			void Comienzo() {
+				dlld = new DoublyLinkedListDeque<Integer>();
+				dlld.append(2);
+				dlld.append(3);
+				dlld.prepend(1);
+			}
+			@AfterEach
+			void Fin() {
+				dlld = null;
+			}
+
+			@Test
+			void listaTresElementosGet(){
+
+			}
+
+			@Test
+			void listaTresElementosContains(){
+
+			}
+
+			@Test
+			void listaTresElementosRemove(){
+
+			}
+
+			@Test
+			void listaTresElementosSort(){
+
+			}
+
+
+		}
+
+
+
 	}
 
 
