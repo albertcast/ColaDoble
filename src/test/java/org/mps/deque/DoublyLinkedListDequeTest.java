@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 class DoublyLinkedListDequeTest {
 
 	/*
-	 * @author Alberto Castillo Sanchez
+	 * Autor: Alberto Castillo Sanchez
 	 *
 	 * Trabajando con lista vacia:
 	 * 		metodo First()

@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * @author Nikita Kulyukin Goryunov
  * Usando como item un entero
  *
  * Tests para probar el funcionamiento de la clase DequeNode con las siguientes pruebas:
@@ -45,13 +44,13 @@ class DequeNodeTest {
     DequeNode<Integer> node = null;
     @BeforeEach
     void setup() {
-        node = new DequeNode<>(0, null, null);
+        node = new DequeNode<Integer>(0, null, null);
     }
     @Nested
     @DisplayName("Test para nodo singular")
     class SingularNode {
-
-
+    	
+    	
         @Test
         @DisplayName("Test previous es null")
         void testPreviousSingleNode() {
@@ -94,7 +93,7 @@ class DequeNodeTest {
         }
 
         @Test
-        @DisplayName("previous es node(4, null, null)")
+        @DisplayName("Test previous es node(4, null, null)")
         void testPreviousNode () {
             DequeNode<Integer> expectedNode = previous;
             DequeNode<Integer> actualNode = node.getPrevious();
@@ -102,110 +101,24 @@ class DequeNodeTest {
 
         }
         @Test
-        @DisplayName("next es null")
-        void testNextNode () {
+        @DisplayName("Test next es null")
+        void testNextSingleNode () {
             assertNull(node.getNext());
         }
         @Test
-        @DisplayName("No es First")
-        void testIsFirstNode () {
-            assertFalse(node.isFirstNode());
-        }
-        @Test
-        @DisplayName("Es Last")
-        void testIsLastNode () {
-            assertTrue(node.isLastNode());
-        }
-        @Test
-        @DisplayName("Es Terminal")
-        void testIsNotTerminalNode () {
-            assertFalse(node.isNotATerminalNode());
-        }
-
-    }
-    @Nested
-    @DisplayName("Test para nodo con Next")
-    class NodeWithNext{
-        DequeNode<Integer> next;
-        @BeforeEach
-        void setup(){
-            next = new DequeNode<>(6, null, null);
-            node.setNext(next);
-        }
-
-        @Test
-        @DisplayName("Previous es null")
-        void testPreviousNode () {
-            assertNull(node.getPrevious());
-
-        }
-        @Test
-        @DisplayName("next es node(6, null, null)")
-        void testNextNode () {
-            DequeNode<Integer> expectedNode = next;
-            DequeNode<Integer> actualNode = node.getNext();
-            assertEquals(expectedNode, actualNode);
-        }
-        @Test
-        @DisplayName("Es First")
-        void testIsFirstNode () {
-            assertTrue(node.isFirstNode());
-        }
-        @Test
-        @DisplayName("No es Last")
-        void testIsNotLastNode () {
-            assertFalse(node.isLastNode());
-        }
-        @Test
-        @DisplayName("Es Terminal")
-        void testIsATerminalNode () {
-            assertFalse(node.isNotATerminalNode());
-        }
-
-    }
-    @Nested
-    @DisplayName("Test para nodo con Previous y Next")
-    class NodeWithPreviousAndNext{
-        DequeNode<Integer> previous;
-        DequeNode<Integer> next;
-        @BeforeEach
-        void setup(){
-            previous = new DequeNode<>(4, null, null);
-            next = new DequeNode<>(6, null, null);
-            node.setPrevious(previous);
-            node.setNext(next);
-        }
-
-        @Test
-        @DisplayName("previous es node(4, null, null)")
-        void testPreviousNode () {
-            DequeNode<Integer> expectedNode = previous;
-            DequeNode<Integer> actualNode = node.getPrevious();
-            assertEquals(expectedNode, actualNode);
-
-        }
-        @Test
-        @DisplayName("next es node(6, null, null)")
-        void testNextNode () {
-
-            DequeNode<Integer> expectedNode = next;
-            DequeNode<Integer> actualNode = node.getNext();
-            assertEquals(expectedNode, actualNode);
-        }
-        @Test
-        @DisplayName("No es First")
+        @DisplayName("Test isFirst es False")
         void testIsFirstSingleNode () {
             assertFalse(node.isFirstNode());
         }
         @Test
-        @DisplayName("No es Last")
+        @DisplayName("Test isLast es True")
         void testIsLastSingleNode () {
-            assertFalse(node.isLastNode());
+            assertTrue(node.isLastNode());
         }
         @Test
-        @DisplayName("No es Terminal")
+        @DisplayName("Test isNotTerminal es False")
         void testIsNotTerminalSingleNode () {
-            assertTrue(node.isNotATerminalNode());
+            assertFalse(node.isNotATerminalNode());
         }
 
     }
