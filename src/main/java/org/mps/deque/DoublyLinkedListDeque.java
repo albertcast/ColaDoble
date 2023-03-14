@@ -1,5 +1,7 @@
 package org.mps.deque;
 
+import java.util.Comparator;
+
 public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
 
     private DequeNode<T> first;
@@ -85,4 +87,50 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
     public int size() {
         return size;
     }
+
+	@Override
+	public T get(int index) {
+		if(index < 0 || index > size){
+			throw new IndexOutOfBoundsException("El indice buscado no está contenido en la lista (indice < 0 o indice > tamaño de la lista. Index = " + index);
+		}
+
+		int i = 0;
+		DequeNode<T> aux = first;
+		while(i < index){
+			aux = first.getNext();
+			i++;
+		}
+
+
+
+		return aux.getItem();
+	}
+
+	@Override
+	public boolean contains(T value) {
+		return false;
+	}
+
+	@Override
+	public void remove(T value) {
+
+	}
+
+	@Override
+	public void sort(Comparator<? super T> comparator) {
+		DequeNode<T> auxFirst = first;
+		for(int i = 0; i < size; i++){
+			DequeNode<T> auxSecond = auxFirst.getNext();
+			if(auxSecond != null) {
+				for (int j = i; j < size; j++) {
+					if (comparator.compare(auxFirst.getItem(), auxSecond.getItem()) > 0) {
+						T placeholder = auxFirst.getItem();
+						auxFirst.setItem(auxSecond.getItem());
+						auxSecond.setItem(placeholder);
+					}
+				}
+				auxFirst = first.getNext();
+			}
+		}
+	}
 }
