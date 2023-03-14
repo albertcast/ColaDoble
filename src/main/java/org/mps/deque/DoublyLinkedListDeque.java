@@ -93,16 +93,52 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
 		return null;
 	}
 
+
 	@Override
 	public boolean contains(T value) {
-		return false;
+		if(first!=null) {
+			return contains(first, value);
+		}else{
+			return false;
+		}
 	}
+	private boolean contains(DequeNode node, T value){
+		if(node.getItem().equals(value)){
+			return true;
+		}else if(node.getNext()!=null){
+			return contains(node.getNext(),value);
+		}else{
+			return false;
+		}
 
+
+	}
 	@Override
 	public void remove(T value) {
-
+		remove(value, first);
 	}
+	private void remove(T value, DequeNode node){
+		if(node!=null) {
+			if (node.getItem().equals(value)) {
+				if (node.getPrevious() != null) {
+					node.getPrevious().setNext(node.getNext());
+				}
+				if (node.getNext() != null) {
+					node.getNext().setPrevious(node.getPrevious());
+				}
+				node.setPrevious(null);
+				node.setNext(null);
+				node.setItem(null);
 
+			} else if (node.getNext() != null) {
+				remove(value, node.getNext());
+			} else {
+				throw new DoubleEndedQueueException("Error, There is no such element in the queue");
+			}
+		}else{
+			throw new DoubleEndedQueueException("Error, cannot remove an element from an empty queue");
+		}
+	}
 	@Override
 	public void sort(Comparator<? super T> comparator) {
 

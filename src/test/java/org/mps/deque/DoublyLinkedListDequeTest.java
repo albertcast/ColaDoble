@@ -22,6 +22,7 @@ class DoublyLinkedListDequeTest {
 	 * 		metodo DeleteLast()
 	 * 		metodo append()
 	 * 		metodo prepend()
+	 * 		metodo contains() -> DoubleEndedQueueException();
 	 * 
 	 * Trabajando con lista de un solo elemento:
 	 * 		metodo First()
@@ -49,7 +50,14 @@ class DoublyLinkedListDequeTest {
 	 * 		metodo DeleteLast()
 	 * 		metodo append()
 	 * 		metodo prepend()
-	 * 
+	 *
+	 *
+	 * Trabajando con lista de elementos: (3, 2, 4, 8, 3, 10):
+	 * 		metodo contains(3) -> True (Primer elemento)
+	 * 		metodo contains(8) -> True (Elemento intermedio)
+	 * 		metodo contains(10) -> True (Ultimo elemnento)
+	 * 		metodo contains(24) -> False (Elemento no en la lista)
+	 *
 	 */
 	
 	@Nested
@@ -83,6 +91,8 @@ class DoublyLinkedListDequeTest {
 			int expectedResult = 0;
 			assertEquals(expectedResult, dlld.size());
 		}
+		@Test
+		void listaVaciaContains(){ assertThrows(DoubleEndedQueueException.class, ()-> dlld.contains(3));}
 		
 		@Test
 		void listaVaciaBorrarPrimero() {
