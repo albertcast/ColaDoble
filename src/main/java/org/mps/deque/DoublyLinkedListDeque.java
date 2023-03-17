@@ -1,5 +1,7 @@
 package org.mps.deque;
 
+import java.util.Comparator;
+
 public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
 
     private DequeNode<T> first;
@@ -20,6 +22,7 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
     		size++;
     	} else {
     		DequeNode<T> aux = new DequeNode<T>(value, null, first);
+			first.setPrevious(aux);
     		first = aux;
     		size++;
     	}  	
@@ -33,6 +36,7 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
     		size++;
     	} else {
     		DequeNode<T> aux = new DequeNode<T>(value, last, null);
+			last.setNext(aux);
     		last = aux;
     		size++;
     	} 
