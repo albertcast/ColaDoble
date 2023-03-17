@@ -418,13 +418,13 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
-			@DisplayName("Metodo Get de la lista vacia con indice entre 0 y su tamaño")
+			@DisplayName("Metodo Get de la lista vacia con indice entre 0 y su tamano")
 			void listaVaciaGetValidIndex(){
 				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(0));
 			}
 
 			@Test
-			@DisplayName("Metodo Get de la lista vacia con indice mayor que su tamaño")
+			@DisplayName("Metodo Get de la lista vacia con indice mayor que su tamano")
 			void listaVaciaGetBigIndex(){
 				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(110));
 			}
@@ -477,13 +477,13 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
-			@DisplayName("Metodo Get de la lista con 1 elemento e indice entre 0 y su tamaño")
+			@DisplayName("Metodo Get de la lista con 1 elemento e indice entre 0 y su tamano")
 			void listaUnElementoGetValidIndex(){
 				assertEquals(2, dlld.get(0));
 			}
 
 			@Test
-			@DisplayName("Metodo Get de la lista con 1 elemento y indice mayor que su tamaño")
+			@DisplayName("Metodo Get de la lista con 1 elemento y indice mayor que su tamano")
 			void listaUnElementoGetBigIndex(){
 				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(101));
 			}
@@ -547,7 +547,7 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
-			@DisplayName("Metodo Get de la lista con 2 elementos e indice mayor que su tamaño")
+			@DisplayName("Metodo Get de la lista con 2 elementos e indice mayor que su tamano")
 			void listaDosElementosGetBigIndex(){
 				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(341));
 			}
@@ -606,7 +606,7 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
-			@DisplayName("Metodo Get de la lista con 3 elementos e indice entre 0 y su tamaño")
+			@DisplayName("Metodo Get de la lista con 3 elementos e indice entre 0 y su tamano")
 			void listaTresElementosGetNormalValidIndex(){
 				assertEquals(2, dlld.get(1));
 			}
@@ -618,7 +618,7 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
-			@DisplayName("Metodo Get de la lista con 3 elementos e indice mayor que su tamaño")
+			@DisplayName("Metodo Get de la lista con 3 elementos e indice mayor que su tamano")
 			void listaTresElementosGetBigIndex(){
 				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(110));
 			}
