@@ -8,49 +8,51 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import java.util.Comparator;
+
 
 class DoublyLinkedListDequeTest {
 
 	/*
 	 * Autor: Alberto Castillo Sanchez
 	 *
-		 * Prueba primera practica:
-		 * Trabajando con lista vacia:
-		 * 		metodo First()
-		 * 		metodo Last()
-		 * 		metodo size()
-		 * 		metodo DeleteFirst()
-		 * 		metodo DeleteLast()
-		 * 		metodo append()
-		 * 		metodo prepend()
-		 *
-		 * Trabajando con lista de un solo elemento:
-		 * 		metodo First()
-		 * 		metodo Last()
-		 * 		metodo size()
-		 * 		metodo DeleteFirst()
-		 * 		metodo DeleteLast()
-		 * 		metodo append()
-		 * 		metodo prepend()
-		 *
-		 * Trabajando con lista de dos elementos:
-		 * 		metodo First()
-		 * 		metodo Last()
-		 * 		metodo size()
-		 * 		metodo DeleteFirst()
-		 * 		metodo DeleteLast()
-		 * 		metodo append()
-		 * 		metodo prepend()
-		 *
-		 * Trabajando con lista de 3 elementos:
-		 * 		metodo First()
-		 * 		metodo Last()
-		 * 		metodo size()
-		 * 		metodo DeleteFirst()
-		 * 		metodo DeleteLast()
-		 * 		metodo append()
-		 * 		metodo prepend()
-		 *
+	 * Prueba primera practica:
+	 * Trabajando con lista vacia:
+	 * 		metodo First()
+	 * 		metodo Last()
+	 * 		metodo size()
+	 * 		metodo DeleteFirst()
+	 * 		metodo DeleteLast()
+	 * 		metodo append()
+	 * 		metodo prepend()
+	 *
+	 * Trabajando con lista de un solo elemento:
+	 * 		metodo First()
+	 * 		metodo Last()
+	 * 		metodo size()
+	 * 		metodo DeleteFirst()
+	 * 		metodo DeleteLast()
+	 * 		metodo append()
+	 * 		metodo prepend()
+	 *
+	 * Trabajando con lista de dos elementos:
+	 * 		metodo First()
+	 * 		metodo Last()
+	 * 		metodo size()
+	 * 		metodo DeleteFirst()
+	 * 		metodo DeleteLast()
+	 * 		metodo append()
+	 * 		metodo prepend()
+	 *
+	 * Trabajando con lista de 3 elementos:
+	 * 		metodo First()
+	 * 		metodo Last()
+	 * 		metodo size()
+	 * 		metodo DeleteFirst()
+	 * 		metodo DeleteLast()
+	 * 		metodo append()
+	 * 		metodo prepend()
+	 *
 	 * =================================================================================================
 	 * =================================================================================================
 	 *
@@ -348,14 +350,25 @@ class DoublyLinkedListDequeTest {
 	@DisplayName("Pruebas segunda practica")
 	class pruebasSegundaPractica{
 
+		class Comparer implements Comparator<Integer>{
+
+			public Comparer(){}
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				return o1.compareTo(o2);
+			}
+		}
+
 		@Nested
 		@DisplayName("Pruebas con lista vacia")
 		class pruebasListasVacias{
 			private DoublyLinkedListDeque<Integer> dlld;
-
+			Comparator<Integer> integerComparator;
 			@BeforeEach
 			void Comienzo() {
+
 				dlld = new DoublyLinkedListDeque<Integer>();
+				integerComparator = new Comparer();
 			}
 
 			@AfterEach
@@ -364,8 +377,18 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
-			void listaVaciaGet(){
-				
+			void listaVaciaGetNegativeIndex(){
+				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(-1));
+			}
+
+			@Test
+			void listaVaciaGetValidIndex(){
+				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(0));
+			}
+
+			@Test
+			void listaVaciaGetBigIndex(){
+				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(110));
 			}
 
 			@Test
@@ -379,8 +402,10 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
-			void listaVaciaSort(){
-
+			void listaDosElementosSort(){
+				dlld.sort(integerComparator);
+				assertNull(dlld.first());
+				assertNull(dlld.last());
 			}
 
 
@@ -389,11 +414,17 @@ class DoublyLinkedListDequeTest {
 		@DisplayName("Pruebas con lista de un elemento")
 		class pruebasListasUnElemento{
 			private DoublyLinkedListDeque<Integer> dlld;
-
+			Comparator<Integer> integerComparator;
 			@BeforeEach
 			void Comienzo() {
 				dlld = new DoublyLinkedListDeque<Integer>();
 				dlld.append(2);
+				integerComparator = new Comparator<Integer>() {
+					@Override
+					public int compare(Integer o1, Integer o2) {
+						return o1.compareTo(o2);
+					}
+				};
 			}
 			@AfterEach
 			void Fin() {
@@ -401,8 +432,18 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
-			void listaUnElementoGet(){
+			void listaUnElementoGetNegativeIndex(){
+				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(-1));
+			}
 
+			@Test
+			void listaUnElementoGetValidIndex(){
+				assertEquals(2, dlld.get(0));
+			}
+
+			@Test
+			void listaUnElementoGetBigIndex(){
+				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(101));
 			}
 
 			@Test
@@ -411,15 +452,16 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
-			void listaUnElementoRemove(){
+			void listaUnElementoRemove() {
 
 			}
 
 			@Test
 			void listaUnElementoSort(){
-
+				dlld.sort(integerComparator);
+				assertEquals(2, dlld.first());
+				assertEquals(2, dlld.last());
 			}
-
 
 		}
 
@@ -427,12 +469,13 @@ class DoublyLinkedListDequeTest {
 		@DisplayName("Pruebas con lista de dos elementos")
 		class pruebasListasDosElementos{
 			private DoublyLinkedListDeque<Integer> dlld;
-
+			Comparator<Integer> integerComparator;
 			@BeforeEach
 			void Comienzo() {
 				dlld = new DoublyLinkedListDeque<Integer>();
-				dlld.append(2);
 				dlld.append(3);
+				dlld.append(2);
+				integerComparator = new Comparer();
 			}
 
 			@AfterEach
@@ -441,8 +484,23 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
-			void listaDosElementosGet(){
+			void listaDosElementosGetNegativeIndex(){
+				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(-1));
+			}
 
+			@Test
+			void listaDosElementosGetMinimumValidIndex(){
+				assertEquals(3, dlld.get(0));
+			}
+
+			@Test
+			void listaDosElementosGetMaximumValidIndex(){
+				assertEquals(2, dlld.get(1));
+			}
+
+			@Test
+			void listaDosElementosGetBigIndex(){
+				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(-1));
 			}
 
 			@Test
@@ -457,7 +515,9 @@ class DoublyLinkedListDequeTest {
 
 			@Test
 			void listaDosElementosSort(){
-
+				dlld.sort(integerComparator);
+				assertEquals(2, dlld.first());
+				assertEquals(3, dlld.last());
 			}
 
 
@@ -467,13 +527,14 @@ class DoublyLinkedListDequeTest {
 		@DisplayName("Pruebas con lista de tres elementos")
 		class pruebasListasTresElementos{
 			private DoublyLinkedListDeque<Integer> dlld;
-
+			Comparator<Integer> integerComparator;
 			@BeforeEach
 			void Comienzo() {
 				dlld = new DoublyLinkedListDeque<Integer>();
 				dlld.append(2);
-				dlld.append(3);
-				dlld.prepend(1);
+				dlld.append(1);
+				dlld.prepend(3);
+				integerComparator = new Comparer();
 			}
 			@AfterEach
 			void Fin() {
@@ -483,6 +544,31 @@ class DoublyLinkedListDequeTest {
 			@Test
 			void listaTresElementosGet(){
 
+			}
+
+			@Test
+			void listaTresElementosGetNegativeIndex(){
+				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(-1));
+			}
+
+			@Test
+			void listaTresElementosGetMinimumValidIndex(){
+				assertEquals(3, dlld.get(0));
+			}
+
+			@Test
+			void listaTresElementosGetNormalValidIndex(){
+				assertEquals(2, dlld.get(1));
+			}
+
+			@Test
+			void listaTresElementosGetMaximumValidIndex(){
+				assertEquals(1, dlld.get(2));
+			}
+
+			@Test
+			void listaTresElementosGetBigIndex(){
+				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(110));
 			}
 
 			@Test
@@ -497,12 +583,55 @@ class DoublyLinkedListDequeTest {
 
 			@Test
 			void listaTresElementosSort(){
-
+				dlld.sort(integerComparator);
+				assertEquals(1, dlld.first());
+				assertEquals(2, dlld.get(1));
+				assertEquals(3, dlld.last());
 			}
 
 
 		}
 
+		@Nested
+		@DisplayName("Pruebas con lista de tres elementos")
+		class pruebasListasMuchosElementos {
+			private DoublyLinkedListDeque<Integer> dlld;
+			Comparator<Integer> integerComparator;
+			@BeforeEach
+			void Comienzo() {
+				dlld = new DoublyLinkedListDeque<Integer>();
+				dlld.append(2);
+				dlld.append(1);
+				dlld.prepend(3);
+				dlld.append(23);
+				dlld.append(13);
+				dlld.append(43);
+				dlld.append(25);
+				dlld.prepend(4);
+				dlld.prepend(15);
+				dlld.prepend(12);
+				integerComparator = new Comparer();
+			}
+			@AfterEach
+			void Fin() {
+				dlld = null;
+			}
+
+			@Test
+			void listaMuchosElementosSort(){
+				dlld.sort(integerComparator);
+				assertEquals(1, dlld.first());
+				assertEquals(2, dlld.get(1));
+				assertEquals(3, dlld.get(2));
+				assertEquals(4, dlld.get(3));
+				assertEquals(12, dlld.get(4));
+				assertEquals(13, dlld.get(5));
+				assertEquals(15, dlld.get(6));
+				assertEquals(23, dlld.get(7));
+				assertEquals(25, dlld.get(8));
+				assertEquals(43, dlld.last());
+			}
+		}
 
 
 	}
