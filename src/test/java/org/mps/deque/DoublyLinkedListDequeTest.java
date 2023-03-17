@@ -14,7 +14,7 @@ class DoublyLinkedListDequeTest {
 
 	/*
 	 * @author Alberto Castillo Sanchez
-	 *
+	 * @author Nikita Kulyukin Goryunov
 	 * Trabajando con lista vacia:
 	 * 		metodo First()
 	 * 		metodo Last()
@@ -696,50 +696,59 @@ class DoublyLinkedListDequeTest {
 			void TestEliminarElementoNoEnLaLista() {
 				assertThrows(DoubleEndedQueueException.class, () -> dlld.remove(124));
 			}
-		}
-
-		@Nested
-		@DisplayName("Pruebas con lista de muchos elementos")
-		class pruebasListasMuchosElementos {
-			private DoublyLinkedListDeque<Integer> dlld;
-			Comparator<Integer> integerComparator;
-
-			@BeforeEach
-			void Comienzo() {
-				dlld = new DoublyLinkedListDeque<Integer>();
-				dlld.append(2);
-				dlld.append(1);
-				dlld.prepend(3);
-				dlld.append(23);
-				dlld.append(13);
-				dlld.append(43);
-				dlld.append(25);
-				dlld.prepend(4);
-				dlld.prepend(15);
-				dlld.prepend(12);
-				integerComparator = new Comparer();
-			}
-
-			@AfterEach
-			void Fin() {
-				dlld = null;
-			}
 
 			@Test
-			@DisplayName("Metodo Sort de la lista con muchos elementos")
-			void listaMuchosElementosSort() {
-				dlld.sort(integerComparator);
-				assertEquals(1, dlld.first());
-				assertEquals(2, dlld.get(1));
-				assertEquals(3, dlld.get(2));
-				assertEquals(4, dlld.get(3));
-				assertEquals(12, dlld.get(4));
-				assertEquals(13, dlld.get(5));
-				assertEquals(15, dlld.get(6));
-				assertEquals(23, dlld.get(7));
-				assertEquals(25, dlld.get(8));
-				assertEquals(43, dlld.last());
+			@DisplayName("Equals de dos listas distintas da false")
+			void DosListasDistintasDaFalse() {
+				DoubleEndedQueue<Integer> expectedValue = new DoublyLinkedListDeque<>();
+				expectedValue.append(2);
+				expectedValue.append(4);
+
+				assertFalse(expectedValue.equals(dlld));
+			}
+		}
+			@Nested
+			@DisplayName("Pruebas con lista de muchos elementos")
+			class pruebasListasMuchosElementos {
+				private DoublyLinkedListDeque<Integer> dlld;
+				Comparator<Integer> integerComparator;
+
+				@BeforeEach
+				void Comienzo() {
+					dlld = new DoublyLinkedListDeque<Integer>();
+					dlld.append(2);
+					dlld.append(1);
+					dlld.prepend(3);
+					dlld.append(23);
+					dlld.append(13);
+					dlld.append(43);
+					dlld.append(25);
+					dlld.prepend(4);
+					dlld.prepend(15);
+					dlld.prepend(12);
+					integerComparator = new Comparer();
+				}
+
+				@AfterEach
+				void Fin() {
+					dlld = null;
+				}
+
+				@Test
+				@DisplayName("Metodo Sort de la lista con muchos elementos")
+				void listaMuchosElementosSort() {
+					dlld.sort(integerComparator);
+					assertEquals(1, dlld.first());
+					assertEquals(2, dlld.get(1));
+					assertEquals(3, dlld.get(2));
+					assertEquals(4, dlld.get(3));
+					assertEquals(12, dlld.get(4));
+					assertEquals(13, dlld.get(5));
+					assertEquals(15, dlld.get(6));
+					assertEquals(23, dlld.get(7));
+					assertEquals(25, dlld.get(8));
+					assertEquals(43, dlld.last());
+				}
 			}
 		}
 	}
-}
