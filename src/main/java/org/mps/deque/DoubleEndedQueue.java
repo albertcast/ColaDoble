@@ -101,4 +101,5 @@ public interface DoubleEndedQueue<T> {
      * @param comparator the {@code Comparator} used to compare deque elements
      */
     void sort(Comparator<? super T> comparator);
+    boolean equals(Object o);
 }
