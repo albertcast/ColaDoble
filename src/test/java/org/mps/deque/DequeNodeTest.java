@@ -50,7 +50,16 @@ class DequeNodeTest {
     @DisplayName("Test para nodo singular")
     class SingularNode {
     	
-    	
+    	@Test
+        @DisplayName("Test para Cambiar el valor del nodo")
+        void testChangeValueNode(){
+
+            node.setItem(1);
+            int expectedValue = 1;
+            int actualValue = node.getItem();
+            assertEquals(expectedValue, actualValue);
+        }
+
         @Test
         @DisplayName("Test previous es null")
         void testPreviousSingleNode() {
