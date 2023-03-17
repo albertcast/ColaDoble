@@ -1,7 +1,5 @@
 package org.mps.deque;
 
-import java.util.Comparator;
-
 public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
 
     private DequeNode<T> first;
@@ -22,7 +20,6 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
     		size++;
     	} else {
     		DequeNode<T> aux = new DequeNode<T>(value, null, first);
-    		first.setPrevious(first);
     		first = aux;
     		size++;
     	}  	
@@ -36,7 +33,6 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
     		size++;
     	} else {
     		DequeNode<T> aux = new DequeNode<T>(value, last, null);
-    		last.setNext(aux);
     		last = aux;
     		size++;
     	} 
@@ -51,7 +47,7 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
     		last = null;
     		size--;
     	} else {
-    		throw new DoubleEndedQueueException("Se han intentado eliminar un elemento de una cola vacía");
+    		throw new DoubleEndedQueueException("Se han intentado eliminar un elemento de una cola vacï¿½a");
     	}
     }
 
@@ -64,7 +60,7 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
     		last = null;
     		size--;
     	} else {
-    		throw new DoubleEndedQueueException("Se han intentado eliminar un elemento de una cola vacía");
+    		throw new DoubleEndedQueueException("Se han intentado eliminar un elemento de una cola vacï¿½a");
     	}
     }
 
@@ -115,10 +111,27 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
 	}
 	@Override
 	public void remove(T value) {
-		remove(value, first);
+		if(first == null){
+			throw new DoubleEndedQueueException("Error, cannot remove an element from an empty queue");
+		}
+		if(!value.equals(first.getItem())&&!value.equals(last.getItem())) {
+			remove(value, first);
+		}
+		if (value.equals(first.getItem())) {
+			first = first.getNext();
+			if(first != null) {
+				first.setPrevious(null);
+			}
+		}
+		if(value.equals(last.getItem())){
+			last = last.getPrevious();
+			if(last != null) {
+				last.setNext(null);
+			}
+		}
+		size--;
 	}
 	private void remove(T value, DequeNode node){
-		if(node!=null) {
 			if (node.getItem().equals(value)) {
 				if (node.getPrevious() != null) {
 					node.getPrevious().setNext(node.getNext());
@@ -135,12 +148,27 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
 			} else {
 				throw new DoubleEndedQueueException("Error, There is no such element in the queue");
 			}
-		}else{
-			throw new DoubleEndedQueueException("Error, cannot remove an element from an empty queue");
-		}
 	}
 	@Override
 	public void sort(Comparator<? super T> comparator) {
 
 	}
+	@Override
+	public boolean equals(Object o){
+		if(o instanceof DoubleEndedQueue<?>){
+			if(((DoubleEndedQueue<?>) o).size() == size()) {
+				DequeNode<?> node = first;
+				DequeNode<?> nodeCompared = ((DoublyLinkedListDeque<?>) o).first;
+				while (node!= null && node.getItem().equals(nodeCompared.getItem())) {
+					node = node.getNext();
+					nodeCompared = nodeCompared.getNext();
+				}
+				if (node == null) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 }
+
