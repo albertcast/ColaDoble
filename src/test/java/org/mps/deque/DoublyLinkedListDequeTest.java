@@ -110,32 +110,38 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo First de la lista vacia")
 			void listaVaciaFirst() {
 				assertNull(dlld.first());
 			}
 
 			@Test
+			@DisplayName("Metodo Last de la lista vacia")
 			void listaVaciaLast() {
 				assertNull(dlld.last());
 			}
 
 			@Test
+			@DisplayName("Metodo Size de la lista vacia")
 			void listaVaciaSize() {
 				int expectedResult = 0;
 				assertEquals(expectedResult, dlld.size());
 			}
 
 			@Test
+			@DisplayName("Metodo deleteFirst de la lista vacia")
 			void listaVaciaBorrarPrimero() {
 				assertThrows(DoubleEndedQueueException.class, () -> dlld.deleteFirst());
 			}
 
 			@Test
+			@DisplayName("Metodo deleteLast de la lista vacia")
 			void listaVaciaBorrarUltimo() {
 				assertThrows(DoubleEndedQueueException.class, () -> dlld.deleteLast());
 			}
 
 			@Test
+			@DisplayName("Metodo append de la lista vacia")
 			void listaVaciaAnadirAlFinal() {
 				dlld.append(2);
 				assertEquals(2, dlld.last());
@@ -144,6 +150,7 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo prepend de la lista vacia")
 			void listaVaciaAnadirAlPrincipio() {
 				dlld.prepend(2);
 				assertEquals(2, dlld.last());
@@ -170,21 +177,25 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo First de la lista con 1 elemento")
 			void listaUnElementoFirst() {
 				assertEquals(2, dlld.first());
 			}
 
 			@Test
+			@DisplayName("Metodo Last de la lista con 1 elemento")
 			void listaUnElementoLast() {
 				assertEquals(2, dlld.last());
 			}
 
 			@Test
+			@DisplayName("Metodo Size de la lista con 1 elemento")
 			void listaUnElementoSize() {
 				assertEquals(1, dlld.size());
 			}
 
 			@Test
+			@DisplayName("Metodo DeleteFirst de la lista con 1 elemento")
 			void listaUnElementoBorrarPrimero() {
 				dlld.deleteFirst();
 				assertNull(dlld.first());
@@ -193,6 +204,7 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo DeleteLast de la lista con 1 elemento")
 			void listaUnElementoBorrarUltimo() {
 				dlld.deleteLast();
 				assertNull(dlld.first());
@@ -201,6 +213,7 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo Append de la lista con 1 elemento")
 			void listaUnElementoAnadirAlFinal() {
 				dlld.append(3);
 				assertEquals(2, dlld.first());
@@ -209,6 +222,7 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo Prepend de la lista con 1 elemento")
 			void listaUnElementoAnadirAlPrincipio() {
 				dlld.prepend(3);
 				assertEquals(3, dlld.first());
@@ -236,21 +250,25 @@ class DoublyLinkedListDequeTest {
 				dlld = null;
 			}
 			@Test
+			@DisplayName("Metodo First de la lista con 2 elementos")
 			void listaDosElementosFirst() {
 				assertEquals(2, dlld.first());
 			}
 
 			@Test
+			@DisplayName("Metodo Last de la lista con 2 elementos")
 			void listaDosElementosLast() {
 				assertEquals(3, dlld.last());
 			}
 
 			@Test
+			@DisplayName("Metodo Size de la lista con 2 elementos")
 			void listaDosElementosSize() {
 				assertEquals(2, dlld.size());
 			}
 
 			@Test
+			@DisplayName("Metodo DeleteFirst de la lista con 2 elementos")
 			void listaDosElementosDeleteFirst() {
 				dlld.deleteFirst();
 				assertEquals(3, dlld.first());
@@ -260,6 +278,7 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo DeleteLast de la lista con 2 elementos")
 			void listaDosElementosDeleteLast() {
 				dlld.deleteLast();
 				assertEquals(2, dlld.first());
@@ -268,6 +287,7 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo Append de la lista con 2 elementos")
 			void listaDosElementosAnadirAlFinal() {
 				dlld.append(4);
 				assertEquals(2, dlld.first());
@@ -276,6 +296,7 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo Prepend de la lista con 2 elementos")
 			void listaDosElementosAnadirAlPrincipio() {
 				dlld.prepend(1);
 				assertEquals(1, dlld.first());
@@ -304,21 +325,25 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo First de la lista con 3 elementos")
 			void listaTresElementosFirst() {
 				assertEquals(1, dlld.first());
 			}
 
 			@Test
+			@DisplayName("Metodo Last de la lista con 3 elementos")
 			void listaTresElementosLast() {
 				assertEquals(3, dlld.last());
 			}
 
 			@Test
+			@DisplayName("Metodo Size de la lista con 3 elementos")
 			void listaTresElementosSize() {
 				assertEquals(3, dlld.size());
 			}
 
 			@Test
+			@DisplayName("Metodo DeleteFirst de la lista con 3 elementos")
 			void listaTresElementosDeleteFirst() {
 				dlld.deleteFirst();
 				assertEquals(2, dlld.first());
@@ -328,6 +353,7 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo DeleteLast de la lista con 3 elementos")
 			void listaTresElementosDeleteLast() {
 				dlld.deleteLast();
 				assertEquals(1, dlld.first());
@@ -336,6 +362,7 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo Append de la lista con 3 elementos")
 			void listaTresElementosAnadirAlFinal() {
 				dlld.append(4);
 				assertEquals(1, dlld.first());
@@ -344,6 +371,7 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo Prepend de la lista con 3 elementos")
 			void listaTresElementosAnadirAlPrincipio() {
 				dlld.prepend(0);
 				assertEquals(0, dlld.first());
@@ -384,31 +412,37 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo Get de la lista vacia con indice negativo")
 			void listaVaciaGetNegativeIndex(){
 				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(-1));
 			}
 
 			@Test
+			@DisplayName("Metodo Get de la lista vacia con indice entre 0 y su tamaño")
 			void listaVaciaGetValidIndex(){
 				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(0));
 			}
 
 			@Test
+			@DisplayName("Metodo Get de la lista vacia con indice mayor que su tamaño")
 			void listaVaciaGetBigIndex(){
 				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(110));
 			}
 
 			@Test
+			@DisplayName("Metodo Contains de la lista vacia")
 			void listaVaciaContains(){
 				assertThrows(DoubleEndedQueueException.class, ()-> dlld.contains(3));
 			}
 
 			@Test
+			@DisplayName("Metodo Remove de la lista vacia")
 			void listaVaciaRemove(){
 
 			}
 
 			@Test
+			@DisplayName("Metodo Sort de la lista vacia")
 			void listaVaciaElementosSort(){
 				dlld.sort(integerComparator);
 				assertNull(dlld.first());
@@ -437,31 +471,37 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo Get de la lista con 1 elemento e indice negativo")
 			void listaUnElementoGetNegativeIndex(){
 				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(-1));
 			}
 
 			@Test
+			@DisplayName("Metodo Get de la lista con 1 elemento e indice entre 0 y su tamaño")
 			void listaUnElementoGetValidIndex(){
 				assertEquals(2, dlld.get(0));
 			}
 
 			@Test
+			@DisplayName("Metodo Get de la lista con 1 elemento y indice mayor que su tamaño")
 			void listaUnElementoGetBigIndex(){
 				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(101));
 			}
 
 			@Test
+			@DisplayName("Metodo Contains de la lista con 1 elemento")
 			void listaUnElementoContains(){
 
 			}
 
 			@Test
+			@DisplayName("Metodo Remove de la lista con 1 elemento")
 			void listaUnElementoRemove() {
 
 			}
 
 			@Test
+			@DisplayName("Metodo Sort de la lista con 1 elemento")
 			void listaUnElementoSort(){
 				dlld.sort(integerComparator);
 				assertEquals(2, dlld.first());
@@ -489,36 +529,43 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo Get de la lista con 2 elementos e indice negativo")
 			void listaDosElementosGetNegativeIndex(){
 				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(-1));
 			}
 
 			@Test
+			@DisplayName("Metodo Get de la lista con 2 elementos e indice entre 0")
 			void listaDosElementosGetMinimumValidIndex(){
 				assertEquals(3, dlld.get(0));
 			}
 
 			@Test
+			@DisplayName("Metodo Get de la lista con 2 elementos e indice indicando el ultimo elemento de la lista")
 			void listaDosElementosGetMaximumValidIndex(){
 				assertEquals(2, dlld.get(1));
 			}
 
 			@Test
+			@DisplayName("Metodo Get de la lista con 2 elementos e indice mayor que su tamaño")
 			void listaDosElementosGetBigIndex(){
-				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(-1));
+				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(341));
 			}
 
 			@Test
+			@DisplayName("Metodo Contains de la lista con 2 elementos")
 			void listaDosElementosContains(){
 
 			}
 
 			@Test
+			@DisplayName("Metodo Remove de la lista con 2 elementos")
 			void listaDosElementosRemove(){
 
 			}
 
 			@Test
+			@DisplayName("Metodo Sort de la lista con 2 elementos")
 			void listaDosElementosSort(){
 				dlld.sort(integerComparator);
 				assertEquals(2, dlld.first());
@@ -547,46 +594,49 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
-			void listaTresElementosGet(){
-
-			}
-
-			@Test
+			@DisplayName("Metodo Get de la lista con 3 elementos e indice negativo")
 			void listaTresElementosGetNegativeIndex(){
 				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(-1));
 			}
 
 			@Test
+			@DisplayName("Metodo Get de la lista con 3 elementos e indice 0")
 			void listaTresElementosGetMinimumValidIndex(){
 				assertEquals(3, dlld.get(0));
 			}
 
 			@Test
+			@DisplayName("Metodo Get de la lista con 3 elementos e indice entre 0 y su tamaño")
 			void listaTresElementosGetNormalValidIndex(){
 				assertEquals(2, dlld.get(1));
 			}
 
 			@Test
+			@DisplayName("Metodo Get de la lista con 3 elementos e indice indicando al ultimo elemento de la lista")
 			void listaTresElementosGetMaximumValidIndex(){
 				assertEquals(1, dlld.get(2));
 			}
 
 			@Test
+			@DisplayName("Metodo Get de la lista con 3 elementos e indice mayor que su tamaño")
 			void listaTresElementosGetBigIndex(){
 				assertThrows(IndexOutOfBoundsException.class, () -> dlld.get(110));
 			}
 
 			@Test
+			@DisplayName("Metodo Contains de la lista con 3 elementos")
 			void listaTresElementosContains(){
 
 			}
 
 			@Test
+			@DisplayName("Metodo Remove de la lista con 3 elementos")
 			void listaTresElementosRemove(){
 
 			}
 
 			@Test
+			@DisplayName("Metodo Sort de la lista con 3 elementos")
 			void listaTresElementosSort(){
 				dlld.sort(integerComparator);
 				assertEquals(1, dlld.first());
@@ -623,6 +673,7 @@ class DoublyLinkedListDequeTest {
 			}
 
 			@Test
+			@DisplayName("Metodo Sort de la lista con muchos elementos")
 			void listaMuchosElementosSort(){
 				dlld.sort(integerComparator);
 				assertEquals(1, dlld.first());
