@@ -1,4 +1,4 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 ColaDoble,org.mps.deque,DoubleEndedQueueException,0,4,0,0,0,2,0,1,0,1
-ColaDoble,org.mps.deque,DoublyLinkedListDeque,6,202,0,16,4,52,4,16,4,8
-ColaDoble,org.mps.deque,DequeNode,7,50,2,6,2,15,3,11,1,9
+ColaDoble,org.mps.deque,DoublyLinkedListDeque,0,466,5,65,0,116,5,45,0,15
+ColaDoble,org.mps.deque,DequeNode,0,57,0,8,0,17,0,14,0,10

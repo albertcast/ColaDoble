@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.mps.deque.DoublyLinkedListDequeTest" time="0.048" tests="28" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.mps.deque.DoublyLinkedListDequeTest" time="0.129" tests="58" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="18"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-18.0.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\Nikita\AppData\Local\Temp\surefire16191978239817565586\surefirebooter1524388571959864050.jar C:\Users\Nikita\AppData\Local\Temp\surefire16191978239817565586 2023-03-17T16-25-03_840-jvmRun1 surefire17953255177818165916tmp surefire_011643562927194743724tmp"/>
+    <property name="sun.java.command" value="C:\Users\Nikita\AppData\Local\Temp\surefire7610881984587114642\surefirebooter4858760867488385009.jar C:\Users\Nikita\AppData\Local\Temp\surefire7610881984587114642 2023-03-17T17-01-40_167-jvmRun1 surefire13110001983132282009tmp surefire_02290571998737554174tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Nikita\Documents\Programacion\MantenimientoYPruebas\ColaDoble\target\test-classes;C:\Users\Nikita\Documents\Programacion\MantenimientoYPruebas\ColaDoble\target\classes;C:\Users\Nikita\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\Nikita\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;C:\Users\Nikita\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Nikita\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\Nikita\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\Nikita\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Nikita\AppData\Local\Temp\surefire16191978239817565586\surefirebooter1524388571959864050.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Nikita\AppData\Local\Temp\surefire7610881984587114642\surefirebooter4858760867488385009.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="18.0.1+10-24"/>
@@ -56,32 +56,62 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="62.0"/>
   </properties>
-  <testcase name="listaTresElementosFirst" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasTresElementos" time="0"/>
-  <testcase name="listaTresElementosLast" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasTresElementos" time="0"/>
-  <testcase name="listaTresElementosSize" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasTresElementos" time="0"/>
-  <testcase name="listaTresElementosAnadirAlFinal" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasTresElementos" time="0"/>
-  <testcase name="listaTresElementosAnadirAlPrincipio" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasTresElementos" time="0"/>
-  <testcase name="listaTresElementosDeleteFirst" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasTresElementos" time="0"/>
-  <testcase name="listaTresElementosDeleteLast" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasTresElementos" time="0"/>
-  <testcase name="listaDosElementosDeleteLast" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasDosElementos" time="0"/>
-  <testcase name="listaDosElementosLast" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasDosElementos" time="0"/>
-  <testcase name="listaDosElementosSize" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasDosElementos" time="0"/>
-  <testcase name="listaDosElementosFirst" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasDosElementos" time="0"/>
-  <testcase name="listaDosElementosDeleteFirst" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasDosElementos" time="0"/>
-  <testcase name="listaDosElementosAnadirAlFinal" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasDosElementos" time="0"/>
-  <testcase name="listaDosElementosAnadirAlPrincipio" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasDosElementos" time="0.002"/>
-  <testcase name="listaUnElementoBorrarPrimero" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasUnElemento" time="0.007"/>
-  <testcase name="listaUnElementoBorrarUltimo" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasUnElemento" time="0"/>
-  <testcase name="listaUnElementoAnadirAlFinal" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasUnElemento" time="0"/>
-  <testcase name="listaUnElementoLast" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasUnElemento" time="0"/>
-  <testcase name="listaUnElementoSize" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasUnElemento" time="0.005"/>
-  <testcase name="listaUnElementoAnadirAlPrincipio" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasUnElemento" time="0"/>
-  <testcase name="listaUnElementoFirst" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasUnElemento" time="0.002"/>
-  <testcase name="listaVaciaBorrarUltimo" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasVacias" time="0.006"/>
-  <testcase name="listaVaciaAnadirAlPrincipio" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasVacias" time="0.002"/>
-  <testcase name="listaVaciaLast" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasVacias" time="0.002"/>
-  <testcase name="listaVaciaSize" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasVacias" time="0.002"/>
-  <testcase name="listaVaciaBorrarPrimero" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasVacias" time="0.001"/>
-  <testcase name="listaVaciaAnadirAlFinal" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasVacias" time="0.002"/>
-  <testcase name="listaVaciaFirst" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasListasVacias" time="0.001"/>
+  <testcase name="listaMuchosElementosSort" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasMuchosElementos" time="0"/>
+  <testcase name="TestContainsTrue" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebaListaConMuchosElementos" time="0"/>
+  <testcase name="TestNoContainsElement" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebaListaConMuchosElementos" time="0.001"/>
+  <testcase name="TestEliminarUltimoElemento" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebaListaConMuchosElementos" time="0"/>
+  <testcase name="TestEliminarElementoNoEnLaLista" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebaListaConMuchosElementos" time="0"/>
+  <testcase name="TestEliminarElementoRepetido" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebaListaConMuchosElementos" time="0"/>
+  <testcase name="TestEliminarElementosNoRepetidos" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebaListaConMuchosElementos" time="0"/>
+  <testcase name="DosListasDistintasDaFalse" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebaListaConMuchosElementos" time="0"/>
+  <testcase name="listaTresElementosGetNegativeIndex" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasTresElementos" time="0.005"/>
+  <testcase name="listaTresElementosGetMaximumValidIndex" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasTresElementos" time="0.001"/>
+  <testcase name="listaTresElementosSort" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasTresElementos" time="0.002"/>
+  <testcase name="listaTresElementosGetMinimumValidIndex" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasTresElementos" time="0.001"/>
+  <testcase name="listaTresElementosGetBigIndex" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasTresElementos" time="0.002"/>
+  <testcase name="listaTresElementosGetNormalValidIndex" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasTresElementos" time="0.001"/>
+  <testcase name="listaDosElementosGetMinimumValidIndex" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasDosElementos" time="0.001"/>
+  <testcase name="listaDosElementosSort" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasDosElementos" time="0.002"/>
+  <testcase name="listaDosElementosGetBigIndex" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasDosElementos" time="0.001"/>
+  <testcase name="listaDosElementosGetNegativeIndex" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasDosElementos" time="0.002"/>
+  <testcase name="listaDosElementosGetMaximumValidIndex" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasDosElementos" time="0.001"/>
+  <testcase name="listaUnElementoGetBigIndex" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasUnElemento" time="0.003"/>
+  <testcase name="listaUnElementoGetNegativeIndex" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasUnElemento" time="0.002"/>
+  <testcase name="listaUnElementoGetValidIndex" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasUnElemento" time="0.001"/>
+  <testcase name="listaUnElementoSort" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasUnElemento" time="0.001"/>
+  <testcase name="listaUnElementoRemove" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasUnElemento" time="0.001"/>
+  <testcase name="listaVaciaContains" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasVacias" time="0.001"/>
+  <testcase name="listaVaciaRemove" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasVacias" time="0.002"/>
+  <testcase name="listaVaciaGetNegativeIndex" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasVacias" time="0.002"/>
+  <testcase name="listaVaciaGetBigIndex" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasVacias" time="0.002"/>
+  <testcase name="listaVaciaGetValidIndex" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasVacias" time="0.003"/>
+  <testcase name="listaVaciaElementosSort" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasSegundaPractica$pruebasListasVacias" time="0.001"/>
+  <testcase name="listaTresElementosFirst" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasTresElementos" time="0.001"/>
+  <testcase name="listaTresElementosLast" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasTresElementos" time="0.001"/>
+  <testcase name="listaTresElementosSize" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasTresElementos" time="0.001"/>
+  <testcase name="listaTresElementosAnadirAlFinal" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasTresElementos" time="0.001"/>
+  <testcase name="listaTresElementosAnadirAlPrincipio" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasTresElementos" time="0.001"/>
+  <testcase name="listaTresElementosDeleteFirst" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasTresElementos" time="0"/>
+  <testcase name="listaTresElementosDeleteLast" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasTresElementos" time="0.002"/>
+  <testcase name="listaDosElementosDeleteLast" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasDosElementos" time="0.001"/>
+  <testcase name="listaDosElementosLast" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasDosElementos" time="0.003"/>
+  <testcase name="listaDosElementosSize" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasDosElementos" time="0.001"/>
+  <testcase name="listaDosElementosFirst" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasDosElementos" time="0.001"/>
+  <testcase name="listaDosElementosDeleteFirst" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasDosElementos" time="0.001"/>
+  <testcase name="listaDosElementosAnadirAlFinal" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasDosElementos" time="0.001"/>
+  <testcase name="listaDosElementosAnadirAlPrincipio" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasDosElementos" time="0.001"/>
+  <testcase name="listaUnElementoBorrarPrimero" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasUnElemento" time="0.002"/>
+  <testcase name="listaUnElementoBorrarUltimo" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasUnElemento" time="0.001"/>
+  <testcase name="listaUnElementoAnadirAlFinal" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasUnElemento" time="0.001"/>
+  <testcase name="listaUnElementoLast" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasUnElemento" time="0.001"/>
+  <testcase name="listaUnElementoSize" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasUnElemento" time="0.001"/>
+  <testcase name="listaUnElementoAnadirAlPrincipio" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasUnElemento" time="0.001"/>
+  <testcase name="listaUnElementoFirst" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasUnElemento" time="0.001"/>
+  <testcase name="listaVaciaBorrarUltimo" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasVacias" time="0.003"/>
+  <testcase name="listaVaciaAnadirAlPrincipio" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasVacias" time="0.002"/>
+  <testcase name="listaVaciaLast" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasVacias" time="0.001"/>
+  <testcase name="listaVaciaSize" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasVacias" time="0.001"/>
+  <testcase name="listaVaciaBorrarPrimero" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasVacias" time="0.002"/>
+  <testcase name="listaVaciaAnadirAlFinal" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasVacias" time="0"/>
+  <testcase name="listaVaciaFirst" classname="org.mps.deque.DoublyLinkedListDequeTest$pruebasPrimeraPractica$pruebasListasVacias" time="0.001"/>
 </testsuite>

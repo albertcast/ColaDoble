@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.mps.deque.DequeNodeTest" time="0.108" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.mps.deque.DequeNodeTest" time="0.12" tests="21" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="18"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-18.0.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\Nikita\AppData\Local\Temp\surefire16191978239817565586\surefirebooter1524388571959864050.jar C:\Users\Nikita\AppData\Local\Temp\surefire16191978239817565586 2023-03-17T16-25-03_840-jvmRun1 surefire17953255177818165916tmp surefire_011643562927194743724tmp"/>
+    <property name="sun.java.command" value="C:\Users\Nikita\AppData\Local\Temp\surefire7610881984587114642\surefirebooter4858760867488385009.jar C:\Users\Nikita\AppData\Local\Temp\surefire7610881984587114642 2023-03-17T17-01-40_167-jvmRun1 surefire13110001983132282009tmp surefire_02290571998737554174tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Nikita\Documents\Programacion\MantenimientoYPruebas\ColaDoble\target\test-classes;C:\Users\Nikita\Documents\Programacion\MantenimientoYPruebas\ColaDoble\target\classes;C:\Users\Nikita\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\Nikita\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;C:\Users\Nikita\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Nikita\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\Nikita\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\Nikita\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Nikita\AppData\Local\Temp\surefire16191978239817565586\surefirebooter1524388571959864050.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Nikita\AppData\Local\Temp\surefire7610881984587114642\surefirebooter4858760867488385009.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="18.0.1+10-24"/>
@@ -56,14 +56,25 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="62.0"/>
   </properties>
-  <testcase name="testNextSingleNode" classname="org.mps.deque.DequeNodeTest$NodeWithPrevious" time="0.047"/>
-  <testcase name="testNextSingleNode" classname="org.mps.deque.DequeNodeTest$SingularNode" time="0"/>
-  <testcase name="testIsLastSingleNode" classname="org.mps.deque.DequeNodeTest$NodeWithPrevious" time="0.002"/>
-  <testcase name="testIsLastSingleNode" classname="org.mps.deque.DequeNodeTest$SingularNode" time="0.002"/>
-  <testcase name="testIsNotTerminalSingleNode" classname="org.mps.deque.DequeNodeTest$NodeWithPrevious" time="0.002"/>
-  <testcase name="testIsNotTerminalSingleNode" classname="org.mps.deque.DequeNodeTest$SingularNode" time="0.002"/>
-  <testcase name="testIsFirstSingleNode" classname="org.mps.deque.DequeNodeTest$NodeWithPrevious" time="0.001"/>
+  <testcase name="testIsLastSingleNode" classname="org.mps.deque.DequeNodeTest$NodeWithPreviousAndNext" time="0.051"/>
+  <testcase name="testIsLastSingleNode" classname="org.mps.deque.DequeNodeTest$NodeWithPrevious" time="0.001"/>
+  <testcase name="testIsLastSingleNode" classname="org.mps.deque.DequeNodeTest$SingularNode" time="0.001"/>
+  <testcase name="testIsNotTerminalSingleNode" classname="org.mps.deque.DequeNodeTest$NodeWithPreviousAndNext" time="0.002"/>
+  <testcase name="testIsNotTerminalSingleNode" classname="org.mps.deque.DequeNodeTest$NodeWithPrevious" time="0"/>
+  <testcase name="testIsNotTerminalSingleNode" classname="org.mps.deque.DequeNodeTest$SingularNode" time="0"/>
+  <testcase name="testIsFirstSingleNode" classname="org.mps.deque.DequeNodeTest$NodeWithPreviousAndNext" time="0.001"/>
+  <testcase name="testIsFirstSingleNode" classname="org.mps.deque.DequeNodeTest$NodeWithPrevious" time="0"/>
   <testcase name="testIsFirstSingleNode" classname="org.mps.deque.DequeNodeTest$SingularNode" time="0"/>
-  <testcase name="testPreviousNode" classname="org.mps.deque.DequeNodeTest$NodeWithPrevious" time="0.007"/>
+  <testcase name="testPreviousNode" classname="org.mps.deque.DequeNodeTest$NodeWithPreviousAndNext" time="0.006"/>
+  <testcase name="testPreviousNode" classname="org.mps.deque.DequeNodeTest$NodeWithNext" time="0.002"/>
+  <testcase name="testPreviousNode" classname="org.mps.deque.DequeNodeTest$NodeWithPrevious" time="0"/>
+  <testcase name="testNextNode" classname="org.mps.deque.DequeNodeTest$NodeWithPreviousAndNext" time="0.001"/>
+  <testcase name="testNextNode" classname="org.mps.deque.DequeNodeTest$NodeWithNext" time="0.001"/>
+  <testcase name="testIsNotLastNode" classname="org.mps.deque.DequeNodeTest$NodeWithNext" time="0.001"/>
+  <testcase name="testIsATerminalNode" classname="org.mps.deque.DequeNodeTest$NodeWithNext" time="0"/>
+  <testcase name="testIsFirstNode" classname="org.mps.deque.DequeNodeTest$NodeWithNext" time="0.002"/>
+  <testcase name="testNextSingleNode" classname="org.mps.deque.DequeNodeTest$NodeWithPrevious" time="0"/>
+  <testcase name="testNextSingleNode" classname="org.mps.deque.DequeNodeTest$SingularNode" time="0"/>
+  <testcase name="testChangeValueNode" classname="org.mps.deque.DequeNodeTest$SingularNode" time="0.001"/>
   <testcase name="testPreviousSingleNode" classname="org.mps.deque.DequeNodeTest$SingularNode" time="0.001"/>
 </testsuite>
