@@ -2,6 +2,10 @@ package org.mps.deque;
 
 import java.util.Comparator;
 
+	/*
+	 * Autor: Alberto Castillo Sanchez
+	*/
+
 public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
 
     private DequeNode<T> first;
@@ -51,7 +55,7 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
     		last = null;
     		size--;
     	} else {
-    		throw new DoubleEndedQueueException("Se han intentado eliminar un elemento de una cola vac�a");
+    		throw new DoubleEndedQueueException("Se han intentado eliminar un elemento de una cola vacía");
     	}
     }
 
@@ -64,7 +68,7 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
     		last = null;
     		size--;
     	} else {
-    		throw new DoubleEndedQueueException("Se han intentado eliminar un elemento de una cola vac�a");
+    		throw new DoubleEndedQueueException("Se han intentado eliminar un elemento de una cola vacía");
     	}
     }
 
@@ -90,7 +94,16 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
 
 	@Override
 	public T get(int index) {
-		return null;
+		if(size == 0 || index < 0 || index > size){
+			throw new IndexOutOfBoundsException("El indice buscado no está contenido en la lista (indice < 0 o indice > tamaño de la lista. Index = " + index);
+		}
+		int i = 0;
+		DequeNode<T> aux = first;
+		while(i < index){
+			aux = aux.getNext();
+			i++;
+		}
+		return aux.getItem();
 	}
 
 
@@ -155,7 +168,21 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
 	}
 	@Override
 	public void sort(Comparator<? super T> comparator) {
-
+		if(size > 1) {
+			DequeNode<T> auxFirst = first;
+			for (int i = 0; i < size-1; i++) {
+				DequeNode<T> auxSecond = auxFirst.getNext();
+				for (int j = i; j < size-1; j++) {
+					if (comparator.compare(auxFirst.getItem(), auxSecond.getItem()) > 0) {
+						T placeholder = auxFirst.getItem();
+						auxFirst.setItem(auxSecond.getItem());
+						auxSecond.setItem(placeholder);
+					}
+					auxSecond = auxSecond.getNext();
+				}
+				auxFirst = auxFirst.getNext();
+			}
+		}
 	}
 	@Override
 	public boolean equals(Object o){
@@ -175,4 +202,3 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
 		return false;
 	}
 }
-
