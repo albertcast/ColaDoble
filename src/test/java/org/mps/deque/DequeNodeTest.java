@@ -131,4 +131,90 @@ class DequeNodeTest {
         }
 
     }
+    @Nested
+    @DisplayName("Test para nodo con Next")
+    class NodeWithNext{
+        DequeNode<Integer> next;
+        @BeforeEach
+        void setup(){
+            next = new DequeNode<>(6, null, null);
+            node.setNext(next);
+        }
+
+        @Test
+        @DisplayName("Previous es null")
+        void testPreviousNode () {
+            assertNull(node.getPrevious());
+
+        }
+        @Test
+        @DisplayName("next es node(6, null, null)")
+        void testNextNode () {
+            DequeNode<Integer> expectedNode = next;
+            DequeNode<Integer> actualNode = node.getNext();
+            assertEquals(expectedNode, actualNode);
+        }
+        @Test
+        @DisplayName("Es First")
+        void testIsFirstNode () {
+            assertTrue(node.isFirstNode());
+        }
+        @Test
+        @DisplayName("No es Last")
+        void testIsNotLastNode () {
+            assertFalse(node.isLastNode());
+        }
+        @Test
+        @DisplayName("Es Terminal")
+        void testIsATerminalNode () {
+            assertFalse(node.isNotATerminalNode());
+        }
+
+    }
+    @Nested
+    @DisplayName("Test para nodo con Previous y Next")
+    class NodeWithPreviousAndNext{
+        DequeNode<Integer> previous;
+        DequeNode<Integer> next;
+        @BeforeEach
+        void setup(){
+            previous = new DequeNode<>(4, null, null);
+            next = new DequeNode<>(6, null, null);
+            node.setPrevious(previous);
+            node.setNext(next);
+        }
+
+        @Test
+        @DisplayName("previous es node(4, null, null)")
+        void testPreviousNode () {
+            DequeNode<Integer> expectedNode = previous;
+            DequeNode<Integer> actualNode = node.getPrevious();
+            assertEquals(expectedNode, actualNode);
+
+        }
+        @Test
+        @DisplayName("next es node(6, null, null)")
+        void testNextNode () {
+
+            DequeNode<Integer> expectedNode = next;
+            DequeNode<Integer> actualNode = node.getNext();
+            assertEquals(expectedNode, actualNode);
+        }
+        @Test
+        @DisplayName("No es First")
+        void testIsFirstSingleNode () {
+            assertFalse(node.isFirstNode());
+        }
+        @Test
+        @DisplayName("No es Last")
+        void testIsLastSingleNode () {
+            assertFalse(node.isLastNode());
+        }
+        @Test
+        @DisplayName("No es Terminal")
+        void testIsNotTerminalSingleNode () {
+            assertTrue(node.isNotATerminalNode());
+        }
+
+    }
 }
