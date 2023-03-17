@@ -1,0 +1,4 @@
+org\mps\deque\DoublyLinkedListDequeTest$pruebasListasUnElemento.class
+org\mps\deque\DoublyLinkedListDequeTest$pruebasListasDosElementos.class
+org\mps\deque\DoublyLinkedListDequeTest$pruebasListasTresElementos.class
+org\mps\deque\DoublyLinkedListDequeTest$pruebasListasVacias.class
